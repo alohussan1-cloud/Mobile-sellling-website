@@ -1,3 +1,16 @@
+<?php
+require_once "../includes/conn.php";
+
+$sql = "SELECT * FROM mobiles";
+$result = mysqli_query($conn, $sql);
+
+$upload = "../uploads/";
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,60 +147,24 @@
       <h2 class="section-title">Featured Products</h2>
       <div class="product-grid">
 
+      <?php while ($row = mysqli_fetch_assoc($result)){ ?>
         <div class="product-card">
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=300&q=80" alt="iPhone 15"/>
+            <img src="<?php echo $upload . $row['Image']; ?> " alt="iPhone 15"/>
             <span class="badge">New</span>
           </div>
           <div class="product-info">
-            <p class="product-brand">Apple</p>
-            <h3 class="product-name">iPhone 15 Pro</h3>
-            <p class="product-price">$999</p>
+            <p class="product-brand"><?php echo $row['Brand'] ?></p>
+            <h3 class="product-name"><?php echo $row['Model'] ?></h3>
+            <p class="product-price"><?php echo $row['Price'] ?></p>
             <button class="btn btn-primary btn-small">Add to Cart</button>
           </div>
         </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1581993192873-ca10a2900cb6?w=300&q=80" alt="Samsung S24"/>
-            <span class="badge badge-sale">Sale</span>
-          </div>
-          <div class="product-info">
-            <p class="product-brand">Samsung</p>
-            <h3 class="product-name">Galaxy S24 Ultra</h3>
-            <p class="product-price">$849 <span class="old-price">$999</span></p>
-            <button class="btn btn-primary btn-small">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&q=80" alt="Xiaomi 14"/>
-          </div>
-          <div class="product-info">
-            <p class="product-brand">Xiaomi</p>
-            <h3 class="product-name">Xiaomi 14 Ultra</h3>
-            <p class="product-price">$699</p>
-            <button class="btn btn-primary btn-small">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&q=80" alt="OnePlus 12"/>
-            <span class="badge">Hot</span>
-          </div>
-          <div class="product-info">
-            <p class="product-brand">OnePlus</p>
-            <h3 class="product-name">OnePlus 12</h3>
-            <p class="product-price">$599</p>
-            <button class="btn btn-primary btn-small">Add to Cart</button>
-          </div>
-        </div>
+         <?php } ?>
 
       </div>
       <div class="center-btn">
-        <a href="products.html" class="btn btn-outline">View All Products</a>
+        <a href="shop.php" class="btn btn-outline">View All Products</a>
       </div>
     </div>
   </section>
