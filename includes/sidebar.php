@@ -72,7 +72,7 @@ margin-top: 20px;
       <a href="admin-dashboard.php" class="nav-item <?= ($page == 'admin-dashboard.php') ? 'active' : '' ?>"><i class="fa-solid fa-gauge"></i> Dashboard</a>
       <a href="admin-products.php" class="nav-item <?= ($page == 'admin-products.php') ? 'active' : '' ?>"><i class="fa-solid fa-mobile-screen"></i> Products</a>
       <a href="admin-orders.php" class="nav-item <?= ($page == 'admin-orders.php') ? 'active' : '' ?>"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
-      <a href="admin-customers.php" class="nav-item <?= ($page == 'admin-customers.php') ? 'active' : '' ?>"><i class="fa-solid fa-users"></i> Customers</a>
+    
       <a href="admin-login.php" class="nav-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     </nav>
   </aside>
