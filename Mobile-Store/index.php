@@ -38,7 +38,7 @@ $upload = "../uploads/";
       <div class="nav-icons">
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span></a>
-        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        <a href="register.php"><i class="fa-solid fa-user"></i></a>
       </div>
     </div>
   </nav>
@@ -75,7 +75,7 @@ $upload = "../uploads/";
             <a href="products.html" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
-            <img src="https://images.unsplash.com/photo-1581993192873-ca10a2900cb6?w=400&q=80" alt="Samsung S24"/>
+            <img src="../uploads/samGalaxyS26.jpg" alt="Samsung S24"/>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ $upload = "../uploads/";
             <p class="product-brand"><?php echo $row['Brand'] ?></p>
             <h3 class="product-name"><?php echo $row['Model'] ?></h3>
             <p class="product-price"><?php echo $row['Price'] ?></p>
-            <button class="btn btn-primary btn-small">Add to Cart</button>
+            <a href="order.php?id= <?php echo $row['ID']; ?>" class="btn btn-primary btn-small">Shop Now</a>
           </div>
         </div>
          <?php } ?>
