@@ -30,14 +30,7 @@ img {
 /* ========================
    CSS VARIABLES
 ======================== */
-:root {
-  --primary: #1a1a2e;
-  --accent: #f5a623;
-  --light-bg: #f9f9f9;
-  --border: #e0e0e0;
-  --text-muted: #777;
-  --white: #ffffff;
-}
+
 
 /* ========================
    CONTAINER
@@ -67,8 +60,8 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: var(--white);
+  background-color: #f5a623;
+  color: #ffffff;
 }
 
 .btn-outline {
@@ -78,8 +71,8 @@ img {
 }
 
 .btn-white {
-  background-color: var(--white);
-  color: var(--primary);
+  background-color: #ffffff;
+  color: #1a1a2e;
   font-weight: 600;
 }
 
@@ -101,7 +94,7 @@ img {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: var(--primary);
+  color: #1a1a2e;
   text-align: center;
 }
 
@@ -114,7 +107,7 @@ img {
    NAVBAR
 ======================== */
 .navbar {
-  background-color: var(--primary);
+  background-color: #1a1a2e;
   padding: 14px 0;
   position: sticky;
   top: 0;
@@ -128,13 +121,13 @@ img {
 }
 
 .logo {
-  color: var(--white);
+  color: #ffffff;
   font-size: 20px;
   font-weight: 700;
 }
 
 .logo i {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .nav-links {
@@ -149,7 +142,7 @@ img {
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .nav-icons {
@@ -165,11 +158,11 @@ img {
 }
 
 .nav-icons a:hover {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .cart-count {
-  background-color: var(--accent);
+  background-color: #f5a623;
   color: white;
   font-size: 10px;
   border-radius: 50%;
@@ -208,11 +201,11 @@ img {
 
 .slide-text {
   flex: 1;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .hero-tag {
-  color: var(--accent);
+  color: #f5a623;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -227,7 +220,7 @@ img {
 }
 
 .slide-text h1 span {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .hero-desc {
@@ -278,7 +271,7 @@ img {
 .slider-dots {
   text-align: center;
   padding: 12px 0 20px;
-  background-color: var(--primary);
+  background-color: #1a1a2e;
 }
 
 .dot {
@@ -293,14 +286,14 @@ img {
 }
 
 .dot.active {
-  background-color: var(--accent);
+  background-color: #f5a623;
 }
 
 /* ========================
    CATEGORIES
 ======================== */
 .categories {
-  background-color: var(--light-bg);
+  background-color: #f9f9f9;
 }
 
 .category-grid {
@@ -311,8 +304,8 @@ img {
 }
 
 .category-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 24px 30px;
   text-align: center;
@@ -321,13 +314,13 @@ img {
 }
 
 .category-card:hover {
-  border-color: var(--accent);
+  border-color: #f5a623;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 .category-card i {
   font-size: 30px;
-  color: var(--primary);
+  color: #1a1a2e;
   margin-bottom: 10px;
 }
 
@@ -347,10 +340,10 @@ img {
 }
 
 .product-card {
-  border: 1px solid var(--border);
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  background: var(--white);
+  background: #ffffff;
   transition: box-shadow 0.2s;
 }
 
@@ -360,12 +353,13 @@ img {
 
 .product-img {
   position: relative;
-  height: 200px;
+  height: 180px;
   overflow: hidden;
-  background: var(--light-bg);
+  background: #f9f9f9;
 }
 
 .product-img img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -374,8 +368,8 @@ img {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: #1a1a2e;
+  color: #ffffff;
   font-size: 11px;
   padding: 3px 8px;
   border-radius: 4px;
@@ -391,7 +385,7 @@ img {
 
 .product-brand {
   font-size: 11px;
-  color: var(--text-muted);
+  color: #777777;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
@@ -401,18 +395,18 @@ img {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
-  color: var(--primary);
+  color: #1a1a2e;
 }
 
 .product-price {
   font-size: 16px;
   font-weight: 700;
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .old-price {
   font-size: 13px;
-  color: var(--text-muted);
+  color: #777777;
   text-decoration: line-through;
   font-weight: 400;
   margin-left: 4px;
@@ -422,7 +416,7 @@ img {
    PROMO BANNER
 ======================== */
 .promo-banner {
-  background-color: var(--accent);
+  background-color: #f5a623;
   padding: 40px 0;
 }
 
@@ -435,7 +429,7 @@ img {
 
 .promo-inner h2 {
   font-size: 22px;
-  color: var(--white);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -449,7 +443,7 @@ img {
    FEATURES / WHY US
 ======================== */
 .features {
-  background-color: var(--light-bg);
+  background-color: #f9f9f9;
 }
 
 .features-grid {
@@ -459,8 +453,8 @@ img {
 }
 
 .feature-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 24px;
   text-align: center;
@@ -468,7 +462,7 @@ img {
 
 .feature-card i {
   font-size: 28px;
-  color: var(--accent);
+  color: #f5a623;
   margin-bottom: 12px;
 }
 
@@ -476,12 +470,12 @@ img {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--primary);
+  color: #1a1a2e;
 }
 
 .feature-card p {
   font-size: 13px;
-  color: var(--text-muted);
+  color: #777777;
   line-height: 1.5;
 }
 
@@ -489,7 +483,7 @@ img {
    FOOTER
 ======================== */
 .footer {
-  background-color: var(--primary);
+  background-color: #1a1a2e;
   color: #ccc;
   padding: 50px 0 0;
 }
@@ -502,17 +496,17 @@ img {
 }
 
 .footer-col h3 {
-  color: var(--white);
+  color: #ffffff;
   font-size: 18px;
   margin-bottom: 12px;
 }
 
 .footer-col h3 i {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .footer-col h4 {
-  color: var(--white);
+  color: #ffffff;
   font-size: 15px;
   margin-bottom: 12px;
 }
@@ -533,11 +527,11 @@ img {
 }
 
 .footer-col ul a:hover {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .footer-col p i {
-  color: var(--accent);
+  color: #f5a623;
   margin-right: 6px;
 }
 
@@ -554,7 +548,7 @@ img {
 }
 
 .social-icons a:hover {
-  color: var(--accent);
+  color: #f5a623;
 }
 
 .footer-bottom {
@@ -667,4 +661,51 @@ img {
   .category-card i {
     font-size: 22px;
   }
+}
+
+
+/* ========================
+   PAGE HEADER
+======================== */
+.page-header {
+  background-color: #1a1a2e;
+  padding: 24px 0;
+}
+
+.page-header h1 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* ========================
+   SHOP LAYOUT
+   Sidebar + Products side by side
+======================== */
+
+
+
+.shop-products {
+  flex: 1;
+}
+
+/* ========================
+   RESPONSIVE - SHOP
+======================== */
+@media (max-width: 768px) {
+  
+  .filter-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  
+  
 }
