@@ -4,88 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../Mobile-Store/style.css">
 </head>
-<style>
-    /* ========================
-   FOOTER
-======================== */
-.footer {
-  background-color: #1a1a2e;
-  color: #ccc;
-  padding: 50px 0 0;
-}
-
-.footer-inner {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 30px;
-  padding-bottom: 40px;
-}
-
-.footer-col h3 {
-  color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.footer-col h3 i {
-  color: #f5a623;
-}
-
-.footer-col h4 {
-  color: #ffffff;
-  font-size: 15px;
-  margin-bottom: 12px;
-}
-
-.footer-col p {
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.footer-col ul li {
-  margin-bottom: 8px;
-}
-
-.footer-col ul a {
-  font-size: 13px;
-  color: #aaa;
-  transition: color 0.2s;
-}
-
-.footer-col ul a:hover {
-  color: #f5a623;
-}
-
-.footer-col p i {
-  color: #f5a623;
-  margin-right: 6px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.social-icons a {
-  color: #aaa;
-  font-size: 18px;
-  transition: color 0.2s;
-}
-
-.social-icons a:hover {
-  color: #f5a623;
-}
-
-.footer-bottom {
-  border-top: 1px solid #2a2a4a;
-  text-align: center;
-  padding: 16px;
-  font-size: 13px;
-  color: #666;
-}
-</style>
 <body>
     
   <footer class="footer" >
