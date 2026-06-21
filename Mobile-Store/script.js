@@ -44,40 +44,13 @@ function resetAutoSlide() {
 
 startAutoSlide();
 
+const menuBtn = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-// ========================
-// CART COUNT
-// ========================
-
-function updateCartCount() {
-  var cart = JSON.parse(localStorage.getItem('cart')) || [];
-  var countEl = document.querySelector('.cart-count');
-  if (countEl) {
-    countEl.textContent = cart.length;
-  }
-}
-
-updateCartCount();
-
-
-// ========================
-// ADD TO CART
-// ========================
-
-var addToCartButtons = document.querySelectorAll('.btn-small');
-
-addToCartButtons.forEach(function(button) {
-  button.addEventListener('click', function() {
-    var card = button.closest('.product-card');
-    var name = card.querySelector('.product-name').textContent;
-    var price = card.querySelector('.product-price').textContent;
-    var img = card.querySelector('img').src;
-
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name: name, price: price, img: img });
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    updateCartCount();
-    alert(name + ' added to cart!');
-  });
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
 });
+
+
+
+
