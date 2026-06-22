@@ -1,7 +1,7 @@
 <?php
 require_once "../includes/conn.php";
 
-$sql = "SELECT * FROM mobiles";
+$sql = "SELECT * FROM mobiles order by ID desc limit 8";
 $result = mysqli_query($conn, $sql);
 
 $upload = "../uploads/";
@@ -24,24 +24,7 @@ $upload = "../uploads/";
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-mobile-screen"></i> MobileZone
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="#">Brands</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="nav-icons">
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span></a>
-        <a href="register.php"><i class="fa-solid fa-user"></i></a>
-      </div>
-    </div>
-  </nav>
+     <?php include "../includes/navbar.php"; ?>
 
 
   <!-- HERO SLIDER -->
@@ -57,7 +40,7 @@ $upload = "../uploads/";
             <p class="hero-tag">New Arrival</p>
             <h1>iPhone 15 Pro <span>Max</span></h1>
             <p class="hero-desc">Titanium design. A17 Pro chip. The most powerful iPhone ever.</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="products.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400&q=80" alt="iPhone 15 Pro"/>
@@ -72,7 +55,7 @@ $upload = "../uploads/";
             <p class="hero-tag">Just Launched</p>
             <h1>Samsung <span>Galaxy S24</span></h1>
             <p class="hero-desc">Galaxy AI is here. Redefine what a phone can do.</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="products.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="../uploads/samGalaxyS26.jpg" alt="Samsung S24"/>
@@ -87,7 +70,7 @@ $upload = "../uploads/";
             <p class="hero-tag">Best Seller</p>
             <h1>Xiaomi 14 <span>Ultra</span></h1>
             <p class="hero-desc">Leica cameras. Snapdragon 8 Gen 3. Premium at its best.</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="products.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80" alt="Xiaomi 14"/>
@@ -98,8 +81,8 @@ $upload = "../uploads/";
     </div><!-- end slider-track -->
 
     <!-- Arrow Buttons -->
-    <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+    <button class="slider-btn prev" onclick="prevBtn()">&#10094;</button>
+    <button class="slider-btn next" onclick="nextBtn()">&#10095;</button>
 
     <!-- Dots -->
     <div class="slider-dots">
@@ -213,45 +196,7 @@ $upload = "../uploads/";
 
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <h3><i class="fa-solid fa-mobile-screen"></i> MobileZone</h3>
-        <p>Your trusted online store for the latest smartphones at the best prices.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="#">Brands</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Brands</h4>
-        <ul>
-          <li><a href="#">Apple</a></li>
-          <li><a href="#">Samsung</a></li>
-          <li><a href="#">Xiaomi</a></li>
-          <li><a href="#">OnePlus</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><i class="fa-solid fa-envelope"></i> info@mobilezone.com</p>
-        <p><i class="fa-solid fa-phone"></i> +92 300 1234567</p>
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 MobileZone. All rights reserved.</p>
-    </div>
-  </footer>
+   <?php include "../includes/footer.php"; ?>
 
   <script src="script.js"></script>
 </body>

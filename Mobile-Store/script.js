@@ -1,49 +1,43 @@
-// ========================
 // HERO SLIDER (slide left/right)
-// ========================
+let current = 0
+let track = document.querySelector(".slider-track")
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll('.dot')
 
-var currentSlide = 0;
-var slides = document.querySelectorAll('.slide');
-var dots = document.querySelectorAll('.dot');
-var autoSlideTimer;
+function updateSlide(){
+  track.style.transform = `translateX(-${current*100}%)`
 
-function showSlide(index) {
-  if (index >= slides.length) { index = 0; }
-  if (index < 0) { index = slides.length - 1; }
-  currentSlide = index;
-
-  // Move the slider track
-  var track = document.querySelector('.slider-track');
-  track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-
-  // Update dots
-  dots.forEach(function(dot) { dot.classList.remove('active'); });
-  dots[currentSlide].classList.add('active');
+  dots.forEach((dot)=>{
+  dot.classList.remove('active')
+  })
+  dots[current].classList.add('active')
 }
 
-function changeSlide(direction) {
-  showSlide(currentSlide + direction);
-  resetAutoSlide();
+function prevBtn(){
+  current--
+  if(current <slides.length){
+    current = 2
+  }
+  updateSlide()
 }
 
-function goToSlide(index) {
-  showSlide(index);
-  resetAutoSlide();
+function nextBtn(){
+  current++
+  if(current == slides.length){
+    current = 0
+  }
+  updateSlide()
 }
 
-function startAutoSlide() {
-  autoSlideTimer = setInterval(function() {
-    showSlide(currentSlide + 1);
-  }, 4000);
+function goToSlide(index){
+      current = index
+      updateSlide()
 }
 
-function resetAutoSlide() {
-  clearInterval(autoSlideTimer);
-  startAutoSlide();
-}
+setInterval(nextBtn,3000)
 
-startAutoSlide();
 
+// Menu toggle
 const menuBtn = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 
