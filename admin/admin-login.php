@@ -1,4 +1,5 @@
 <?php
+session_Start();
 
 require_once "../includes/conn.php";
 
@@ -14,7 +15,8 @@ $error = "";
     
     if(mysqli_num_rows($result) > 0){
       $row =  mysqli_fetch_assoc($result);
-      if($username == $row['Username'] && $password == $row['Password']){
+      if(password_verify($password, $row['Password'])){
+          $_SESSION['admin_username'] = $row['Username'];
         header('location: ../admin/admin-dashboard.php');
         exit();
       } else{
