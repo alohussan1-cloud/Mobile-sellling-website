@@ -32,31 +32,18 @@ $page = basename($_SERVER['PHP_SELF']);
         </ul>
 
         <div class="nav-icons">
-            <a href="register.php"><i class="fa-solid fa-user"></i> Register </a>
-            <a href="../admin/admin-login.php"><i class="fa-solid fa-user"></i> Admin Login</a>
+             <?php if(isset($_SESSION['user_name'])){
+                echo "<p>Welcome,</p>" .$_SESSION['user_name'];
+            } 
+             else{
+               echo '<a href="register.php" class="register"><i class="fa-solid fa-user"></i> Register </a> ';
+
+            } ?>
+            <a href="../admin/admin-login.php" class="admin-btn"></i> Admin Panel</a>
         </div>
 
         <!-- Mobile Menu -->
         <div class="mobile-menu">
-            <!-- <a href="index.php" class="<?= ($page == 'index.php') ? 'active' : '' ?>">
-                Home
-            </a>
-
-            <a href="shop.php" class="<?= ($page == 'shop.php') ? 'active' : '' ?>">
-                Products
-            </a>
-
-            <a href="#brands">Brands</a>
-
-            <a href="#contact">Contact</a>
-
-            <a href="register.php">
-                Register
-            </a>
-
-            <a href="../admin/admin-login.php">
-                Admin Login
-            </a> -->
              <ul class="toggle-links">
             <li><a href="index.php" class="<?= ($page == 'index.php') ? 'active' : '' ?>">Home</a></li>
             <li><a href="shop.php" class="<?= ($page == 'shop.php') ? 'active' : '' ?>"> Products </a></li>
@@ -64,7 +51,7 @@ $page = basename($_SERVER['PHP_SELF']);
             <li><a href="#contact">Contact</a></li>
             
            <li> <a href="register.php"><i class="fa-solid fa-user"></i> Register </a> </li>
-          <li> <a href="../admin/admin-login.php"><i class="fa-solid fa-user"></i> Admin Login</a> </li>
+          <li> <a href="../admin/admin-login.php"><i class="fa-solid fa-user"></i> Admin Panel</a> </li>
         </ul>
         </div>
 
