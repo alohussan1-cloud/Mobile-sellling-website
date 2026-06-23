@@ -37,13 +37,16 @@ function goToSlide(index){
 setInterval(nextBtn,3000)
 
 
-// Menu toggle
+// Menu toggle for smaller screens
 const menuBtn = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
 });
+
+
+// Password toggle
 
 
 

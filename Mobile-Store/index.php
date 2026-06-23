@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../includes/conn.php";
 
 $sql = "SELECT * FROM mobiles order by ID desc limit 8";
@@ -6,10 +7,7 @@ $result = mysqli_query($conn, $sql);
 
 $upload = "../uploads/";
 
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,21 +24,18 @@ $upload = "../uploads/";
   <!-- NAVBAR -->
      <?php include "../includes/navbar.php"; ?>
 
-
   <!-- HERO SLIDER -->
   <section class="hero-slider">
-
-    <!-- Slider Track — all slides sit inside this row -->
     <div class="slider-track">
 
-      <!-- Slide 1 - iPhone -->
+      <!-- Slide 1 -->
       <div class="slide" style="background-color: #1a1a2e;">
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">New Arrival</p>
             <h1>iPhone 15 Pro <span>Max</span></h1>
             <p class="hero-desc">Titanium design. A17 Pro chip. The most powerful iPhone ever.</p>
-            <a href="products.php" class="btn btn-primary">Shop Now</a>
+            <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400&q=80" alt="iPhone 15 Pro"/>
@@ -48,14 +43,14 @@ $upload = "../uploads/";
         </div>
       </div>
 
-      <!-- Slide 2 - Samsung -->
+      <!-- Slide 2-->
       <div class="slide" style="background-color: #0f3460;">
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">Just Launched</p>
             <h1>Samsung <span>Galaxy S24</span></h1>
             <p class="hero-desc">Galaxy AI is here. Redefine what a phone can do.</p>
-            <a href="products.php" class="btn btn-primary">Shop Now</a>
+            <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="../uploads/samGalaxyS26.jpg" alt="Samsung S24"/>
@@ -63,14 +58,14 @@ $upload = "../uploads/";
         </div>
       </div>
 
-      <!-- Slide 3 - Xiaomi -->
+      <!-- Slide 3 -->
       <div class="slide" style="background-color: #16213e;">
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">Best Seller</p>
             <h1>Xiaomi 14 <span>Ultra</span></h1>
             <p class="hero-desc">Leica cameras. Snapdragon 8 Gen 3. Premium at its best.</p>
-            <a href="products.php" class="btn btn-primary">Shop Now</a>
+            <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
             <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80" alt="Xiaomi 14"/>
@@ -78,7 +73,7 @@ $upload = "../uploads/";
         </div>
       </div>
 
-    </div><!-- end slider-track -->
+    </div>
 
     <!-- Arrow Buttons -->
     <button class="slider-btn prev" onclick="prevBtn()">&#10094;</button>
@@ -193,7 +188,6 @@ $upload = "../uploads/";
       </div>
     </div>
   </section>
-
 
   <!-- FOOTER -->
    <?php include "../includes/footer.php"; ?>
