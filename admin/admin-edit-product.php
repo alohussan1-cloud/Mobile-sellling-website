@@ -1,6 +1,12 @@
 <?php
 
-include "../includes/conn.php" ; 
+session_start();
+require_once "../includes/conn.php";
+
+if(!isset($_SESSION['admin_username'])){
+  header('location: ../admin/admin-login.php');
+  exit();
+}
 
 $id = $_GET['id'];
 
@@ -36,8 +42,7 @@ if(isset($_POST["submit"])){
         die(mysqli_error($conn));
     }
 
-            mysqli_stmt_bind_param($stmt, "sssisssi", $brand , $model , $imageName , $price
-            , $descrip , $rom , $ram , $id );
+    mysqli_stmt_bind_param($stmt, "sssisssi", $brand , $model , $imageName , $price , $descrip , $rom , $ram , $id );
 
     $result1 = mysqli_stmt_execute($stmt);
 

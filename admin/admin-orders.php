@@ -1,12 +1,14 @@
 <?php
 
+session_start();
 require_once "../includes/conn.php";
 
+if(!isset($_SESSION['admin_username'])){
+  header('location: ../admin/admin-login.php');
+  exit();
+}
 $sql = "SELECT * FROM orders";
 $result = mysqli_query($conn, $sql);
-
-
-
 
 ?>
 
@@ -49,7 +51,7 @@ $result = mysqli_query($conn, $sql);
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Customer</th>
             <th>Product</th>
             <th>Amount</th>

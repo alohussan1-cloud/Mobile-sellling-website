@@ -5,6 +5,7 @@ require_once "../includes/conn.php";
 
 if(!isset($_SESSION['admin_username'])){
   header('location: ../admin/admin-login.php');
+  exit();
 }
 
 $sql = "SELECT COUNT(*) AS totalOrders FROM orders";
