@@ -34,7 +34,7 @@ function goToSlide(index){
       updateSlide()
 }
 
-setInterval(nextBtn,3000)
+setInterval(nextBtn,5000)
 
 
 // Menu toggle for smaller screens
@@ -47,6 +47,7 @@ menuBtn.addEventListener('click', () => {
 
 
 // Password toggle
+
 
 
 

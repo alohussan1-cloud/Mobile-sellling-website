@@ -4,7 +4,7 @@ require_once "../includes/conn.php";
 
 $brand = $_GET['brand'];
 
-$stmt = mysqli_prepare($conn, "SELECT * FROM mobiles WHERE Brand = ?");
+$stmt = mysqli_prepare($conn, "SELECT * FROM mobiles order by ID desc WHERE Brand = ?");
 if(!$stmt){
      die(mysqli_error($conn));
 }
@@ -21,7 +21,7 @@ $upload = "../uploads/";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title><?php echo htmlspecialchars($brand); ?> Phones - MobileZone</title>
+  <title><?php echo ($brand); ?> Phones - MobileZone</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -713,13 +713,13 @@ $upload = "../uploads/";
 </style>
 <body>
 
-  <?php $page = 'brand.php'; include "../includes/navbar.php"; ?>
+  <?php include "../includes/navbar.php"; ?>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="container">
       <h1><?php echo htmlspecialchars($brand); ?> Phones</h1>
-      <p>Home &rsaquo; Brands &rsaquo; <?php echo htmlspecialchars($brand); ?></p>
+      <p>Home &rsaquo; Brands &rsaquo; <?php echo ($brand); ?></p>
     </div>
   </div>
 
@@ -734,24 +734,26 @@ $upload = "../uploads/";
           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
           <div class="product-card">
             <div class="product-img">
-              <img src="<?php echo $upload . $row['Image']; ?>" alt="<?php echo htmlspecialchars($row['Model']); ?>"/>
+              <img src="<?php echo $upload . $row['Image']; ?>" alt="<?php echo ($row['Model']); ?>"/>
             </div>
             <div class="product-info">
-              <p class="product-brand"><?php echo htmlspecialchars($row['Brand']); ?></p>
-              <h3 class="product-name"><?php echo htmlspecialchars($row['Model']); ?></h3>
-              <p class="product-price">$<?php echo htmlspecialchars($row['Price']); ?></p>
+              <p class="product-brand"><?php echo ($row['Brand']); ?></p>
+              <h3 class="product-name"><?php echo ($row['Model']); ?></h3>
+              <p class="product-price">$<?php echo ($row['Price']); ?></p>
               <a href="order.php?id=<?php echo $row['ID']; ?>" class="btn btn-primary btn-small">Shop Now</a>
             </div>
           </div>
           <?php } ?>
-
         </div>
+        <div class="center-btn">
+        <a href="shop.php" class="btn btn-outline">View All Products</a>
+      </div>
 
       <?php } else { ?>
 
         <div class="no-results">
           <i class="fa-solid fa-mobile-screen"></i>
-          <p>No phones found for "<?php echo htmlspecialchars($brand); ?>" right now.</p>
+          <p>No phones found for "<?php echo ($brand); ?>" right now.</p>
           <a href="shop.php" class="btn btn-primary">View All Products</a>
         </div>
 
@@ -762,6 +764,5 @@ $upload = "../uploads/";
 
   <?php include "../includes/footer.php"; ?>
 
-  <script src="main.js"></script>
 </body>
 </html>

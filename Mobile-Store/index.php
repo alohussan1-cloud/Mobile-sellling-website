@@ -33,12 +33,12 @@ $upload = "../uploads/";
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">New Arrival</p>
-            <h1>iPhone 15 Pro <span>Max</span></h1>
+            <h1>iPhone 17 Pro <span>Max</span></h1>
             <p class="hero-desc">Titanium design. A17 Pro chip. The most powerful iPhone ever.</p>
             <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
-            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400&q=80" alt="iPhone 15 Pro"/>
+            <img src="../uploads/iphone17.jpg" alt="iPhone 17 Pro Max"/>
           </div>
         </div>
       </div>
@@ -90,27 +90,27 @@ $upload = "../uploads/";
 
 
   <!-- CATEGORIES -->
-  <section class="section categories">
+  <section class="section categories" id="brands">
     <div class="container">
       <h2 class="section-title">Shop by Brand</h2>
       <div class="category-grid">
-        <a href="#" class="category-card">
+        <a href="../Mobile-Store/brand.php?brand=<?php echo "Apple" ?>" class="category-card">
           <i class="fa-brands fa-apple"></i>
           <p>Apple</p>
         </a>
-        <a href="#" class="category-card">
-          <i class="fa-brands fa-samsung"></i>
+        <a href="../Mobile-Store/brand.php?brand=<?php echo "Samsung" ?>" class="category-card">
+          <i class="fa-solid fa-mobile-button"></i>
           <p>Samsung</p>
         </a>
-        <a href="#" class="category-card">
+        <a href="../Mobile-Store/brand.php?brand=<?php echo "Xiaomi" ?>"class="category-card">
           <i class="fa-solid fa-mobile-screen"></i>
           <p>Xiaomi</p>
         </a>
-        <a href="#" class="category-card">
+        <a href="../Mobile-Store/brand.php?brand=<?php echo "vivo" ?>" class="category-card">
           <i class="fa-solid fa-mobile"></i>
-          <p>OnePlus</p>
+          <p>Vivo</p>
         </a>
-        <a href="#" class="category-card">
+        <a href="../Mobile-Store/brand.php?brand=<?php echo "Oppo" ?>" class="category-card">
           <i class="fa-solid fa-mobile-retro"></i>
           <p>Oppo</p>
         </a>

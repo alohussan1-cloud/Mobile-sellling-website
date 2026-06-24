@@ -10,6 +10,8 @@ $result = mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_assoc($result);
 
+$productName = $row['Model'];
+
 $upload = "../uploads/";
 
 if(isset($_POST['submit'])){
@@ -18,8 +20,8 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
     $address = $_POST['address'];
 
-    $sql = "INSERT INTO orders(product_id, name, phone, city, address) Values(
-            '$id', '$name', '$phoneNum', '$city', '$address' )";
+    $sql = "INSERT INTO orders(product_id, product_name, name, phone, city, address) Values(
+            '$id', '$productName', '$name', '$phoneNum', '$city', '$address' )";
     
     $run = mysqli_query($conn, $sql);
     if($run){
