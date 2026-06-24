@@ -10,6 +10,48 @@ $page = basename($_SERVER['PHP_SELF']);
     <title>Document</title>
     <link rel="stylesheet" href="../Mobile-Store/style.css">
 </head>
+<style>
+    .user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-name {
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background: white;
+    min-width: 150px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.user-menu:hover .dropdown {
+    display: block;
+}
+</style>
 <body>
 
 <nav class="navbar">
@@ -27,19 +69,26 @@ $page = basename($_SERVER['PHP_SELF']);
         <ul class="nav-links">
             <li><a href="index.php" class="<?= ($page == 'index.php') ? 'active' : '' ?>">Home</a></li>
             <li><a href="shop.php" class="<?= ($page == 'shop.php') ? 'active' : '' ?>"> Products </a></li>
-            <li><a href="#brands">Brands</a></li>
+            <li><a href="#brands" class="<?= ($page == 'brand.php') ? 'active' : '' ?>">Brands</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="nav-icons">
-             <?php if(isset($_SESSION['user_name'])){
-                echo "<p>Welcome,</p>" .$_SESSION['user_name'];
-            } 
-             else{
-               echo '<a href="register.php" class="register"><i class="fa-solid fa-user"></i> Register </a> ';
+            <?php if(isset($_SESSION['user_name'])){ ?>
+            <div class="user-menu">
+                <span class="user-name">👤 <?php echo $_SESSION['user_name']; ?> ▼</span>
+                <div class="dropdown">
+                    <a href="profile.php">Profile</a>
+                    <a href="orders.php">Orders</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+
+           <?php } else{
+               echo '<a href="register.php" class="register"><i class="fa-solid fa-user"></i> Register </a> | 
+                     <a href="login.php" class="register"><i class="fa-solid fa-user"></i> Log In </a> ';
 
             } ?>
-            <a href="../admin/admin-login.php" class="admin-btn"></i> Admin Panel</a>
         </div>
 
         <!-- Mobile Menu -->
@@ -47,11 +96,10 @@ $page = basename($_SERVER['PHP_SELF']);
              <ul class="toggle-links">
             <li><a href="index.php" class="<?= ($page == 'index.php') ? 'active' : '' ?>">Home</a></li>
             <li><a href="shop.php" class="<?= ($page == 'shop.php') ? 'active' : '' ?>"> Products </a></li>
-            <li><a href="#brands">Brands</a></li>
+            <li><a href="#brands" class="<?= ($page == 'brand.php') ? 'active' : '' ?>">Brands</a></li>
             <li><a href="#contact">Contact</a></li>
             
            <li> <a href="register.php"><i class="fa-solid fa-user"></i> Register </a> </li>
-          <li> <a href="../admin/admin-login.php"><i class="fa-solid fa-user"></i> Admin Panel</a> </li>
         </ul>
         </div>
 
