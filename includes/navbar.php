@@ -74,9 +74,9 @@ $page = basename($_SERVER['PHP_SELF']);
         </ul>
 
         <div class="nav-icons">
-            <?php if(isset($_SESSION['user_name'])){ ?>
+            <?php if(isset($_SESSION['name'])){ ?>
             <div class="user-menu">
-                <span class="user-name">👤 <?php echo $_SESSION['user_name']; ?> ▼</span>
+                <span class="user-name">👤 <?php echo $_SESSION['name']; ?> ▼</span>
                 <div class="dropdown">
                     <a href="profile.php">Profile</a>
                     <a href="orders.php">Orders</a>

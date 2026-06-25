@@ -30,7 +30,7 @@
           <li><a href="#">Apple</a></li>
           <li><a href="#">Samsung</a></li>
           <li><a href="#">Xiaomi</a></li>
-          <li><a href="#">OnePlus</a></li>
+          <li><a href="#">Vivo</a></li>
         </ul>
       </div>
       <div class="footer-col">
