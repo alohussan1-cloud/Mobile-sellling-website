@@ -25,6 +25,10 @@ if(isset($_POST["submit"])){
             ('$brand', '$model', '$imageName', '$price', '$descrip', '$rom', '$ram')";
 
     $result = mysqli_query($conn, $sql);
+    if($result){
+      header('location: ../admin/admin-products.php');
+      exit();
+    }
 }
 
 ?>
