@@ -4,7 +4,7 @@ require_once "../includes/conn.php";
 
 $brand = $_GET['brand'];
 
-$stmt = mysqli_prepare($conn, "SELECT * FROM mobiles order by ID desc WHERE Brand = ?");
+$stmt = mysqli_prepare($conn, "SELECT * FROM mobiles  WHERE Brand = ? order by ID desc");
 if(!$stmt){
      die(mysqli_error($conn));
 }
