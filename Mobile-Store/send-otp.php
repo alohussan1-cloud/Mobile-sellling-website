@@ -4,7 +4,9 @@ session_Start();
 $name = $_SESSION['name'] ;
 $email = $_SESSION['email'] ;
 $otp = $_SESSION['otp'];
+
 require_once "../vendor/autoload.php";
+require_once "../includes/google-config.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -16,12 +18,12 @@ $mail->SMTPDebug = 2;
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 $mail->AuthType = 'LOGIN';
-$mail->Username = "GMAIL_ADDRESS_OF_SENDER";
-$mail->Password = "16_CHARACTER_APP_PASSWORD";
+$mail->Username = smtp_email;
+$mail->Password = smtp_password;
 $mail->SMTPSecure = PHPMailer :: ENCRYPTION_SMTPS ;
 $mail->Port = 465 ;
 
-$mail->setFrom("GMAIL_ADDRESS_OF_SENDER", "NAME_OF_SENDER/BRAND");
+$mail->setFrom( smtp_email, "Mobile Zone");
 $mail->addAddress($email, $name);
 $mail->isHTML(true);
 $mail->Subject = "Your OTP Verification code";

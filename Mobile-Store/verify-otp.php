@@ -252,7 +252,7 @@ if(isset($_POST['submit'])){
 
         <p class="subtitle">
             We've sent a 6-digit verification code to
-            <strong>example@email.com</strong>
+            <strong><?php echo $_SESSION['email'] ; ?></strong>
         </p>
 
         <form action="" method="POST">
