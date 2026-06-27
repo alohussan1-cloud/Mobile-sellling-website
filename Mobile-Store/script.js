@@ -46,7 +46,6 @@ menuBtn.addEventListener('click', () => {
 });
 
 
-// Password toggle
 
 
 

@@ -1,23 +1,46 @@
 <?php
-
+session_Start();
 require_once "../includes/conn.php";
 
+$error = '';
+
 if(isset($_POST["submit"])){
+
+    $stmt = mysqli_prepare($conn,"SELECT email FROM users where email = ?");
+    mysqli_stmt_bind_param($stmt, "s", $_POST['email']);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    if(mysqli_num_rows($result)>0){
+      echo $error =  "email already exists";
+      exit();
+    }
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $otp = random_int(100000,999999);
 
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    $_SESSION['name'] = $name;
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $hashed_password;
+    $_SESSION['otp'] = $otp;
 
-    $sql = "INSERT INTO users(name, email, password) Values
-            ('$name', '$email', '$password')";
+    header('location: ../Mobile-Store/send-otp.php');
+    exit();
 
-    $result = mysqli_query($conn, $sql);
-    IF($result){
-      header('location: ../Mobile-Store/login.php');
-    } else{
-      echo "query failed";
-    }
+
+    // $sql = "INSERT INTO users(name, email, password) Values
+    //         ('$name', '$email', '$password')";
+
+    // $result = mysqli_query($conn, $sql);
+    // IF($result){
+    //   header('location: ../Mobile-Store/login.php');
+    // } else{
+    //   echo "query failed";
+    // }
 }
 
 ?>

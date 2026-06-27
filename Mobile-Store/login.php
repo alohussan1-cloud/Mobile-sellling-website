@@ -1,7 +1,7 @@
 <?php
 
-require_once "../includes/conn.php";
 session_start();
+require_once "../includes/conn.php";
 
 $error = "";
 
@@ -29,8 +29,9 @@ if(isset($_POST["submit"])){
     }
 }
 
+require_once "../includes/google-config.php";
 
-
+$login_url = $client-> createAuthUrl();
 
 ?>
 
@@ -280,8 +281,12 @@ if(isset($_POST["submit"])){
         </div>
 
         <input type="submit" name="submit" value="Login" />
-
+        <div class="googleLogin">
+        <a href="<?php echo $login_url ; ?>"> Google Login</a>
+      </div>
       </form>
+
+      
 
       <p class="register-link">
         Don't have an account? <a href="register.php">Register here</a>
