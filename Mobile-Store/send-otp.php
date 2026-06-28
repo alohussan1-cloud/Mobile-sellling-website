@@ -40,7 +40,6 @@ try{
     exit();
 }catch(Exception $e){
     echo  "Failed to send email.";
-    echo $mail->ErrorInfo;
 }
 
 

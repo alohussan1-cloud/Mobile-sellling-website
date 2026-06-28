@@ -6,9 +6,13 @@ $email = $_SESSION['email'] ;
 $password = $_SESSION['password'] ;
 $stored_otp = $_SESSION['otp'];
 
+$error = "";
+
 if(isset($_POST['submit'])){
     $user_otp = implode('', $_POST['otp']);
     $user_otp = trim($user_otp);
+
+    if(time() -  $_SESSION['otp_generated_at'] > 300){
 
     if($user_otp == $stored_otp){
         $stmt = mysqli_prepare($conn, "INSERT INTO users (name, email, password)Values(?,?,?)");
@@ -25,8 +29,12 @@ if(isset($_POST['submit'])){
             header('location: ../Mobile-Store/index.php');
             exit();
         } else{
-            echo "error occured";
-        }
+             $error = "error occured";
+             }
+    } else{
+        $error = "OTP has expired";
+
+    }
 
     }
 }

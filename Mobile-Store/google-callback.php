@@ -3,7 +3,7 @@ session_start();
 
 require_once "../includes/conn.php";
 
-require_once "../Mobile-Store/google-config.php";
+require_once "../includes/google-config.php";
 
 if(isset($_GET['code'])){
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
@@ -11,8 +11,7 @@ if(isset($_GET['code'])){
     if(isset($token['error'])){
         echo "<prev>";
         print_r($token);
-        echo "<prev>";
-        
+        echo "<prev>"; 
     }
     $client->setAccessToken($token);
 

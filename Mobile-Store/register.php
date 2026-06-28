@@ -27,20 +27,11 @@ if(isset($_POST["submit"])){
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $hashed_password;
     $_SESSION['otp'] = $otp;
+    $_SESSION['otp_generated_at'] = time();
 
     header('location: ../Mobile-Store/send-otp.php');
     exit();
 
-
-    // $sql = "INSERT INTO users(name, email, password) Values
-    //         ('$name', '$email', '$password')";
-
-    // $result = mysqli_query($conn, $sql);
-    // IF($result){
-    //   header('location: ../Mobile-Store/login.php');
-    // } else{
-    //   echo "query failed";
-    // }
 }
 
 ?>
@@ -261,7 +252,6 @@ if(isset($_POST["submit"])){
       <h2>Create Account</h2>
       <p>Fill in the details below to register</p>
 
-      <!-- PHP: action="register-process.php" -->
       <form action="" method="POST">
 
         <!-- Error box — show with PHP if needed -->

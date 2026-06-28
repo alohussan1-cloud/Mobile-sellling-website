@@ -669,33 +669,6 @@ hr{
 .shop-products {
   flex: 1;
 }
-.menu-toggle{
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.mobile-menu{
-    display: none;
-}
-
-
-.mobile-menu.active{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 15px;
-}
-
-.toggle-links a {
-  color: #ccc;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
 /*  RESPONSIVE - SHOP */
 @media (max-width: 768px) {
   
@@ -716,11 +689,4 @@ hr{
         align-items: center;
     }
 
-    .mobile-menu.active{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        margin-top: 20px;
-    }
 }

@@ -39,11 +39,19 @@ setInterval(nextBtn,5000)
 
 // Menu toggle for smaller screens
 const menuBtn = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
+const closeBtn = document.querySelector('.close-btn');
+const mobileMenu = document.querySelector('.mobile-sidebar');
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-});
+menuBtn.addEventListener('click', ()=>{
+  mobileMenu.classList.add('active')
+  console.log('active')
+})
+
+closeBtn.addEventListener('click', ()=>{
+  mobileMenu.classList.remove('active')
+})
+
+
 
 
 
