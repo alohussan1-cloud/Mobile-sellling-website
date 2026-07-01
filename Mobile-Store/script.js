@@ -1,3 +1,4 @@
+
 // HERO SLIDER (slide left/right)
 let current = 0
 let track = document.querySelector(".slider-track")
