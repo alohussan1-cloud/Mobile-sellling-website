@@ -24,18 +24,14 @@ img {
   display: block;
 }
 
-/* ========================
-   CONTAINER
-======================== */
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ========================
-   BUTTONS
-======================== */
+/* BUTTONS */
 .btn {
   display: inline-block;
   padding: 10px 22px;
@@ -75,9 +71,7 @@ img {
   margin-top: 10px;
 }
 
-/* ========================
-   SECTIONS
-======================== */
+/* SECTIONS */
 .section {
   padding: 60px 0;
 }
@@ -95,9 +89,7 @@ img {
   margin-top: 30px;
 }
 
-/* ========================
-   NAVBAR
-======================== */
+/* NAVBAR */
 .navbar {
   background-color: #1a1a2e;
   padding: 14px 0;
