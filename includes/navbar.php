@@ -368,9 +368,9 @@ $page = basename($_SERVER['PHP_SELF']);
 
             <div class="sidebar-user">
             <?php if (isset($_SESSION['name'])) { ?>
-                <a href="profile.php" class="btn-profile-side">
+                <!-- <a href="profile.php" class="btn-profile-side">
                 <i class="fa-solid fa-user"></i> Profile
-                </a>
+                </a> -->
                 <a href="logout.php" class="sidebar-logout">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
