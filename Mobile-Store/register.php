@@ -29,10 +29,12 @@ if(isset($_POST["submit"])){
     $_SESSION['otp'] = $otp;
     $_SESSION['otp_generated_at'] = time();
 
-    header('location: ../Mobile-Store/send-otp.php');
+    header('location: send-otp.php');
     exit();
-
 }
+
+require_once "../includes/google-config.php";
+$login_url = $client->createAuthUrl();
 
 ?>
 
@@ -44,7 +46,7 @@ if(isset($_POST["submit"])){
   <title>Register - MobileZone</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
+<style>
 
     * {
       margin: 0;
@@ -229,6 +231,56 @@ if(isset($_POST["submit"])){
         padding: 24px 16px;
       }
     }
+    .google-btn{
+    width:100%;
+    height:48px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    background:#fff;
+    color:#333;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    font-weight:600;
+    transition:.2s;
+    margin-bottom:18px;
+    }
+
+    .google-btn:hover{
+        background:#f8f8f8;
+        border-color:#bbb;
+    }
+
+    .google-btn img{
+        width:20px;
+        height:20px;
+    }
+
+    .divider{
+        display:flex;
+        align-items:center;
+        text-align:center;
+        margin-bottom:20px;
+        margin-top:20px;
+    }
+
+    .divider::before,
+    .divider::after{
+        content:'';
+        flex:1;
+        border-bottom:1px solid #ddd;
+    }
+
+    .divider span{
+        padding:0 12px;
+        font-size:12px;
+        color:#777;
+    }
+      .nav-login{
+          display:none;
+      }
 
   </style>
 </head>
@@ -285,6 +337,15 @@ if(isset($_POST["submit"])){
         </div>
 
         <input type="submit" name= "submit" value=" Create Account" class="btn-register">
+          
+          <div class="divider">
+        <span>OR</span>
+    	</div>
+         
+          <a href="<?php echo $login_url; ?>" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+        Continue with Google
+    </a>
 
       </form>
 
