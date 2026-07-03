@@ -1,3 +1,31 @@
+<?php
+session_Start();
+require_once "../includes/conn.php";
+
+$error = '';
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $stmt = mysqli_prepare($conn, "SELECT email, name FROM users where email = ?");
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if(mysqli_num_rows($result)> 0){
+        $otp = random_int(100000,999999);
+       $rows = mysqli_fetch_assoc($result);
+       $_SESSION['reset_email'] = $rows['email'];
+       $_SESSION['reset_name'] = $rows['name'];
+       $_SESSION['reset_otp'] = $otp;
+       $_SESSION['reset_otp_generated_at'] = time();
+       header('location: send-reset-otp.php');
+    } else{
+        $error = "Sorry! Email does not exist"; 
+    }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,6 +163,10 @@
 
     <h2>Forgot Password</h2>
     <p>Enter the email address associated with your account.</p>
+
+    <?php if(!empty($error)){ ?>
+     <div class="error"><?php echo $error; ?></div>
+      <?php } ?>
 
     <form method="POST">
 
