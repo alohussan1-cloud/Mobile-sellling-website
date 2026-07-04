@@ -27,9 +27,6 @@ $upload = "../uploads/";
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <style>
-        /* ========================
-    RESET
-    ======================== */
     * {
     margin: 0;
     padding: 0;
@@ -56,18 +53,12 @@ $upload = "../uploads/";
     display: block;
     }
 
-    /* ========================
-    CONTAINER
-    ======================== */
     .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     }
 
-    /* ========================
-    BUTTONS
-    ======================== */
     .btn {
     display: inline-block;
     padding: 10px 22px;
@@ -107,9 +98,7 @@ $upload = "../uploads/";
     margin-top: 10px;
     }
 
-    /* ========================
-    SECTIONS
-    ======================== */
+    /* SECTIONS */
     .section {
     padding: 60px 0;
     }
@@ -127,9 +116,7 @@ $upload = "../uploads/";
     margin-top: 30px;
     }
 
-    /* ========================
-    NAVBAR
-    ======================== */
+    /*  NAVBAR */
     .navbar {
     background-color: #1a1a2e;
     padding: 14px 0;
@@ -718,7 +705,7 @@ $upload = "../uploads/";
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="container">
-      <h1><?php echo htmlspecialchars($brand); ?> Phones</h1>
+      <h1><?php echo ($brand); ?> Phones</h1>
       <p>Home &rsaquo; Brands &rsaquo; <?php echo ($brand); ?></p>
     </div>
   </div>
