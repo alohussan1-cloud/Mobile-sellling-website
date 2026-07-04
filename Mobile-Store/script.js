@@ -1,4 +1,3 @@
-
 // HERO SLIDER (slide left/right)
 let current = 0
 let track = document.querySelector(".slider-track")
@@ -16,7 +15,9 @@ function updateSlide(){
 
 function prevBtn(){
   current--
-  if(current <slides.length){
+  console.log(current)
+  
+  if(current < 0){
     current = 2
   }
   updateSlide()
@@ -24,6 +25,7 @@ function prevBtn(){
 
 function nextBtn(){
   current++
+   console.log(current)
   if(current == slides.length){
     current = 0
   }
