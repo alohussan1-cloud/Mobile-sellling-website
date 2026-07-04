@@ -331,7 +331,7 @@ $page = basename($_SERVER['PHP_SELF']);
         </ul>
 
         <div class="nav-icons">
-            <?php if(isset($_SESSION['name'])){ ?>
+            <?php if(isset($_SESSION['name']) ){ ?>
             <div class="user-menu">
                 <span class="user-name">👤 <?php echo $_SESSION['name']; ?> ▼</span>
                 <div class="dropdown">
@@ -368,9 +368,6 @@ $page = basename($_SERVER['PHP_SELF']);
 
             <div class="sidebar-user">
             <?php if (isset($_SESSION['name'])) { ?>
-                <!-- <a href="profile.php" class="btn-profile-side">
-                <i class="fa-solid fa-user"></i> Profile
-                </a> -->
                 <a href="logout.php" class="sidebar-logout">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
@@ -387,6 +384,22 @@ $page = basename($_SERVER['PHP_SELF']);
     </div>
 </nav>
 
+<script>
+  // Menu toggle for smaller screens
+const menuBtn = document.querySelector('.menu-toggle');
+const closeBtn = document.querySelector('.close-btn');
+const mobileMenu = document.querySelector('.mobile-sidebar');
+
+menuBtn.addEventListener('click', ()=>{
+  mobileMenu.classList.add('active')
+  console.log('active')
+})
+
+closeBtn.addEventListener('click', ()=>{
+  mobileMenu.classList.remove('active')
+})
+
+</script>
 </body>
 </html>
 
