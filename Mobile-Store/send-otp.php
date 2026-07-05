@@ -42,6 +42,4 @@ try{
     echo  "Failed to send email.";
 }
 
-
-
 ?>
