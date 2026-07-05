@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
       $user = mysqli_fetch_assoc($result);
       
       if(password_verify($password, $user['password'])){
-        $_SESSION['user_name'] = $user['name'];
+        $_SESSION['name'] = $user['name'];
         header('location: index.php');
         exit();
       } else {
