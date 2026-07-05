@@ -48,12 +48,12 @@ $upload = "../uploads/";
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">Just Launched</p>
-            <h1>Samsung <span>Galaxy S24</span></h1>
-            <p class="hero-desc">Galaxy AI is here. Redefine what a phone can do.</p>
+            <h1>Vivi <span> V40 5G</span></h1>
+            <p class="hero-desc">Latest Vivo Phone With 6000 MAh Battery</p>
             <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
-            <img src="../uploads/samGalaxyS26.jpg" alt="Samsung S24"/>
+            <img src="../uploads/Vivo-X200-Carbon-Black-1-1.png" alt="Vivo V40"/>
           </div>
         </div>
       </div>
@@ -63,12 +63,12 @@ $upload = "../uploads/";
         <div class="container slide-inner">
           <div class="slide-text">
             <p class="hero-tag">Best Seller</p>
-            <h1>Xiaomi 14 <span>Ultra</span></h1>
+            <h1>Oppo <span> F27 5G</span></h1>
             <p class="hero-desc">Leica cameras. Snapdragon 8 Gen 3. Premium at its best.</p>
             <a href="shop.php" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="slide-image">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80" alt="Xiaomi 14"/>
+            <img src="../uploads/oppo-f27-pro-plus-5g-02.webp" alt="Oppo F27"/>
           </div>
         </div>
       </div>
