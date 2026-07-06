@@ -12,8 +12,6 @@ if(isset($_POST['submit'])){
     $user_otp = implode('', $_POST['otp']);
     $user_otp = trim($user_otp);
 
-    if(time() -  $_SESSION['otp_generated_at'] > 300){
-
     if($user_otp == $stored_otp){
         $stmt = mysqli_prepare($conn, "INSERT INTO users (name, email, password)Values(?,?,?)");
         mysqli_stmt_bind_param($stmt,"sss", $name, $email, $password);
@@ -26,7 +24,7 @@ if(isset($_POST['submit'])){
             unset($_SESSION['otp']);
             unset($_SESSION['password']);
 
-            header('location: ../Mobile-Store/index.php');
+            header('location: index.php');
             exit();
         } else{
              $error = "error occured";
@@ -37,7 +35,7 @@ if(isset($_POST['submit'])){
     }
 
     }
-}
+
 
 
 ?>
