@@ -27,8 +27,6 @@ $upload = "../uploads/";
    <?php include "../includes/navbar.php"; ?>
 
 
-
-
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="container">
@@ -72,8 +70,6 @@ $upload = "../uploads/";
     <div class="container">
       <div class="product-grid">
 
-        <!-- Replace with PHP while loop -->
-
           <?php while ($row = mysqli_fetch_assoc($result)){ ?>
         <div class="product-card">
           <div class="product-img">
@@ -96,7 +92,6 @@ $upload = "../uploads/";
 
   <?php include "../includes/footer.php"; ?>
 
-  <script src="script.js"></script>
 
 </body>
 </html>
