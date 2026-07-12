@@ -15,7 +15,7 @@ function updateSlide(){
 
 function prevBtn(){
   current--
-  console.log(current)
+ s
   
   if(current < 0){
     current = 2
@@ -25,7 +25,7 @@ function prevBtn(){
 
 function nextBtn(){
   current++
-   console.log(current)
+  
   if(current == slides.length){
     current = 0
   }
@@ -40,22 +40,32 @@ function goToSlide(index){
 setInterval(nextBtn,5000)
 
 
-// Menu toggle for smaller screens
-const menuBtn = document.querySelector('.menu-toggle');
-const closeBtn = document.querySelector('.close-btn');
-const mobileMenu = document.querySelector('.mobile-sidebar');
+// Live Search
 
-menuBtn.addEventListener('click', ()=>{
-  mobileMenu.classList.add('active')
-  console.log('active')
+let search = document.getElementById("search")
+let searchResults = document.getElementById("searchResults")
+
+search.addEventListener("input", ()=>{
+      searchMobile()
 })
 
-closeBtn.addEventListener('click', ()=>{
-  mobileMenu.classList.remove('active')
-})
+async function searchMobile() {
+  let keyword = search.value
 
+  const response = await fetch("search.php?keyword=" + keyword)
+  console.log(response);
+  
+  const data = await response.json()
+  console.log(data);
 
+  searchResults.innerHTML = ""
+  data.forEach((phone)=>{
+    searchResults.innerHTML += `<p class="search-item"> ${phone.Model} </p> `
 
+  })
+  
+  
+}
 
 
 
