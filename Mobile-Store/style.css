@@ -9,16 +9,20 @@ html{
   scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-.navbar {
-  background-color: #1a1a2e;
-  padding: 14px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-  .nav-inner{
+ /* NAVBAR */
+.navbar {
+  background-color: #1a1a2e;
+  padding: 14px 0;  
+}
+
+.nav-inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,17 +32,89 @@ html{
 
 .logo {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
 .logo i {
   color: #f5a623;
 }
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 00px 6px 00px 14px;
+    width: 50%;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+}
+
+.nav-search:focus-within {
+    border-color: #f5a623;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+#searchResults{
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+  overflow: hidden;
+  z-index: 10000;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.search-item{
+  padding: 12px 16px ;
+}
+
+.search-item:hover{
+  background-color: #f3f3f3;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    color: #f5a623;
+    cursor: pointer;
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+.search-btn:hover {
+    color: #ffffff;
+}
+
+.page-links{
+   padding: 3% 16% 3% 16%;
+}
 
 .nav-links {
   display: flex;
+   justify-content: space-between;
+    align-items: center;
   gap: 15%;
+  
 }
 
 .nav-links a {
@@ -85,14 +161,303 @@ img {
 .mobile-menu a:hover{
   color: #f5a623;
 }
-
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+  
+.user-menu {
+    position: relative;
+    display: inline-block;
 }
 
+.user-name {
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background: white;
+    min-width: 150px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.user-menu:hover .dropdown {
+    display: block;
+}
+.mobile-sidebar{
+    padding:20px;
+    background:#1a1a2e;
+    position: fixed;
+    top: 0;
+    right:-100%;
+    width: 100%;
+    height: 100vh;
+    transition: .8s ease;
+}
+.mobile-sidebar.active{
+    right:0;
+}
+.close-btn{
+    margin-left:95%;
+}
+/* ---- HAMBURGER BUTTON ---- */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-toggle:hover {
+  background-color: #f5a623;
+  border-color: #f5a623;
+}
+
+.menu-toggle i {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+/* ---- NAV LINKS ---- */
+.toggle-links {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.toggle-links li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 10px;
+  color: #aaa;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: color 0.2s;
+}
+
+.toggle-links li a i {
+  color: #f5a623;
+  width: 16px;
+}
+
+.toggle-links li a:hover {
+  color: #ffffff;
+}
+
+.toggle-links li a.active {
+  color: #f5a623;
+}
+
+/* ---- DIVIDER ---- */
+.sidebar-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 20px 0;
+}
+
+/* ---- USER LINKS ---- */
+.sidebar-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-user a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  color: #aaa;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-user a i {
+  color: #f5a623;
+  width: 16px;
+}
+
+.sidebar-user a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.sidebar-logout {
+  color: #e74c3c !important;
+}
+
+.sidebar-logout i {
+  color: #e74c3c !important;
+}
+/* ---- CLOSE BUTTON ---- */
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+/* ---- NAV LINKS ---- */
+.toggle-links {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.toggle-links li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 10px;
+  color: #aaa;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: color 0.2s;
+}
+
+.toggle-links li a i {
+  color: #f5a623;
+  width: 16px;
+}
+
+.toggle-links li a:hover {
+  color: #ffffff;
+}
+
+.toggle-links li a.active {
+  color: #f5a623;
+}
+
+/* ---- DIVIDER ---- */
+.sidebar-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 28px 0 20px;
+}
+
+/* ---- USER SECTION LABEL ---- */
+.sidebar-user-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+/* ---- USER LINKS ---- */
+.sidebar-user {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-user a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Login - outlined style */
+.sidebar-user a.btn-login-side {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.sidebar-user a.btn-login-side i {
+  color: #ffffff;
+}
+
+.sidebar-user a.btn-login-side:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Register - filled orange style */
+.sidebar-user a.btn-register-side {
+  background-color: #f5a623;
+  color: #ffffff;
+}
+
+.sidebar-user a.btn-register-side i {
+  color: #ffffff;
+}
+
+.sidebar-user a.btn-register-side:hover {
+  opacity: 0.88;
+}
+
+/* Profile link */
+.sidebar-user a.btn-profile-side {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.sidebar-user a.btn-profile-side i {
+  color: #f5a623;
+}
+
+/* Logout link */
+.sidebar-logout {
+  background-color: rgba(231, 76, 60, 0.1) ;
+  color: #e74c3c ;
+}
+
+.sidebar-logout i {
+  color: #e74c3c ;
+}
 /* BUTTONS */
 .btn {
   display: inline-block;
@@ -704,6 +1069,10 @@ hr{
   /* Container */
   .container{
     padding: 0 12px;
+  }
+
+  .nav-search{
+    width: 40%;
   }
 
   /* Page Header */
