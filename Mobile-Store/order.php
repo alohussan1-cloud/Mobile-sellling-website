@@ -44,7 +44,6 @@ if(isset($_POST['submit'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Place Order - MobileZone</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="order.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -285,23 +284,8 @@ if(isset($_POST['submit'])){
 </style>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="index.php" class="logo">
-        <i class="fa-solid fa-mobile-screen"></i> MobileZone
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Products</a></li>
-        <li><a href="#">Brands</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="nav-icons">
-        <a href="login.php"><i class="fa-solid fa-user"></i></a>
-      </div>
-    </div>
-  </nav>
+   <!-- NAVBAR -->
+   <?php include "../includes/navbar.php"; ?>
 
 
   <!-- PAGE HEADER -->
