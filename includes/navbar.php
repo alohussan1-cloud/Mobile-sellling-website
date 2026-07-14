@@ -113,8 +113,9 @@ closeBtn.addEventListener('click', ()=>{
   mobileMenu.classList.remove('active')
 })
 
-// Live Search Section
 
+
+// Live Search Section
 let search = document.getElementById("search")
 let searchResults = document.getElementById("searchResults")
 
@@ -123,21 +124,26 @@ search.addEventListener("input", ()=>{
 })
 
 async function searchMobile() {
-  let keyword = search.value
+    searchResults.innerHTML = ""
+    let keyword = search.value
+    if(keyword == ""){
+        searchResults.style.display = "none"
+    }
 
+if(keyword != ""){
+    searchResults.style.display = "block"
   const response = await fetch("search.php?keyword=" + keyword)
   console.log(response);
   
   const data = await response.json()
   console.log(data);
 
-  searchResults.innerHTML = ""
   data.forEach((phone)=>{
-    searchResults.innerHTML += `<p class="search-item"> ${phone.Model} </p> `
-
-  })
-  
-  
+      searchResults.innerHTML += `<p class="search-item"> ${phone.Model} </p> `
+      
+    })
+    
+}
 }
 
 
