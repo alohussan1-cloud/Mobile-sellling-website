@@ -135,7 +135,7 @@ $upload = "../uploads/";
             <p class="product-brand"><?php echo $row['Brand'] ?></p>
             <h3 class="product-name"><?php echo $row['Model'] ?></h3>
             <p class="product-price"><?php echo $row['Price'] ?></p>
-            <a href="order.php?id= <?php echo $row['ID']; ?>" class="btn btn-primary btn-small">Shop Now</a>
+            <a href="mobile-details.php?id= <?php echo $row['ID']; ?>" class="btn btn-primary btn-small">View Details</a>
           </div>
         </div>
          <?php } ?>
