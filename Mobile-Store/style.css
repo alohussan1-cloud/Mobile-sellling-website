@@ -63,7 +63,7 @@ html{
   width: 100%;
   background-color: white;
   border-radius: 8px;
-  display: block;
+  display: none;
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
   overflow: hidden;
   z-index: 10000;
