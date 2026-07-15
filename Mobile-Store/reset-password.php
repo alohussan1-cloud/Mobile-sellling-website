@@ -171,11 +171,7 @@ if (isset($_POST['submit'])) {
             <label>New Password</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-lock"></i>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter new password"
-                    required>
+                <input type="password" name="password" placeholder="Enter new password"  required>
             </div>
         </div>
 
@@ -183,19 +179,11 @@ if (isset($_POST['submit'])) {
             <label>Confirm Password</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-lock"></i>
-                <input
-                    type="password"
-                    name="confirm_password"
-                    placeholder="Confirm new password"
-                    required>
+                <input type="password" name="confirm_password" placeholder="Confirm new password" required>
             </div>
         </div>
 
-        <input
-            type="submit"
-            name="submit"
-            value="Reset Password">
-
+        <input  type="submit" name="submit"  value="Reset Password">
     </form>
 
 </div>
