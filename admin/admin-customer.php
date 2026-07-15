@@ -200,7 +200,6 @@ if (!$result) {
   <div class="main">
     <div class="topbar">
       <h2>Customers</h2>
-      <!-- PHP: echo total customers -->
       <span>Total: <?php echo mysqli_num_rows($result); ?> customers</span>
     </div>
 
