@@ -106,7 +106,6 @@ const mobileMenu = document.querySelector('.mobile-sidebar');
 
 menuBtn.addEventListener('click', ()=>{
   mobileMenu.classList.add('active')
-  console.log('active')
 })
 
 closeBtn.addEventListener('click', ()=>{
