@@ -1192,4 +1192,16 @@ hr{
     justify-content: center;
   }
 
+  /* Search bar */
+  .nav-search{
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
