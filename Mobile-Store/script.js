@@ -39,36 +39,3 @@ function goToSlide(index){
 
 setInterval(nextBtn,5000)
 
-
-// Live Search
-
-let search = document.getElementById("search")
-let searchResults = document.getElementById("searchResults")
-
-search.addEventListener("input", ()=>{
-      searchMobile()
-})
-
-async function searchMobile() {
-  let keyword = search.value
-
-  const response = await fetch("search.php?keyword=" + keyword)
-  console.log(response);
-  
-  const data = await response.json()
-  console.log(data);
-
-  searchResults.innerHTML = ""
-  data.forEach((phone)=>{
-    searchResults.innerHTML += `<p class="search-item"> ${phone.Model} </p> `
-
-  })
-  
-  
-}
-
-
-
-
-
-
