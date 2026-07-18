@@ -85,9 +85,9 @@ $page = basename($_SERVER['PHP_SELF']);
             </div>
         </div>
     </div>
+    
 
     <div class="page-links">
-
         <!-- Desktop Navigation -->
         <ul class="nav-links">
             <li><a href="index.php" class="<?= ($page == 'index.php') ? 'active' : '' ?>">Home</a></li>
@@ -138,7 +138,7 @@ if(keyword != ""){
   console.log(data);
 
   data.forEach((phone)=>{
-      searchResults.innerHTML += `<p class="search-item"> ${phone.Model} </p> `
+      searchResults.innerHTML += `<a href="mobile-details.php?id=${phone.ID}" class="search-item"> ${phone.Model} </a> `
       
     })
     
